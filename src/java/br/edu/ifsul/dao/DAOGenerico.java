@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 public class DAOGenerico<TIPO> implements Serializable {
     private List<TIPO> listaObjetos;
     private List<TIPO> listaTodos;
-    @PersistenceContext(unitName="Atividade-Locadora-WEBPU")
+    @PersistenceContext(unitName="Atividade-LocadoraWEBPU")
     protected EntityManager em;
     protected Class classePersistente;
 

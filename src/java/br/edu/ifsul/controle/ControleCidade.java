@@ -1,7 +1,7 @@
 package br.edu.ifsul.controle;
 
-import br.edu.ifsul.dao.GrupoDAO;
-import br.edu.ifsul.modelo.Grupo;
+import br.edu.ifsul.dao.CidadeDAO;
+import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.util.Util;
 import java.io.Serializable;
 import javax.ejb.EJB;
@@ -12,24 +12,24 @@ import javax.inject.Named;
  *
  * @author sega
  */
-@Named(value = "controleGrupo")
+@Named(value = "controleCidade")
 @ViewScoped
-public class ControleGrupo implements Serializable {
+public class ControleCidade implements Serializable {
 
     @EJB
-    private GrupoDAO<Grupo> dao;
-    private Grupo objeto;
+    private CidadeDAO<Cidade> dao;
+    private Cidade objeto;
     
-    public ControleGrupo() {
+    public ControleCidade() {
         
     }
     
     public String listar() {
-        return "/privado/grupo/listar?faces-redirect=true";
+        return "/privado/cidade/listar?faces-redirect=true";
     }
     
     public void novo() {
-        objeto = new Grupo();
+        objeto = new Cidade();
     }
     
     public void alterar(Object id) {
@@ -63,19 +63,19 @@ public class ControleGrupo implements Serializable {
         }        
     }
     
-    public GrupoDAO<Grupo> getDao() {
+    public CidadeDAO<Cidade> getDao() {
         return dao;
     }
     
-    public void setDao(GrupoDAO<Grupo> dao) {
+    public void setDao(CidadeDAO<Cidade> dao) {
         this.dao = dao;
     }
     
-    public Grupo getObjeto() {
+    public Cidade getObjeto() {
         return objeto;
     }
     
-    public void setObjeto(Grupo objeto) {
+    public void setObjeto(Cidade objeto) {
         this.objeto = objeto;
     }
     
